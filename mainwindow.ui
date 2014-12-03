@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1186</width>
+    <height>428</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tracer</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="RasterImageEditor" name="rasterImageEditor" native="true"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1186</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionOpen"/>
+   <addaction name="actionExportFrames"/>
+   <addaction name="actionPan"/>
+   <addaction name="actionZoom"/>
+   <addaction name="actionRotate"/>
+   <addaction name="actionIdentity"/>
+   <addaction name="actionPen"/>
+   <addaction name="actionSpline"/>
+   <addaction name="actionEraser"/>
+   <addaction name="actionFill"/>
+   <addaction name="actionRegion"/>
+   <addaction name="actionSelectColor"/>
+   <addaction name="actionTraceTool"/>
+   <addaction name="actionClear"/>
+   <addaction name="actionPlay"/>
+   <addaction name="actionShowOnion"/>
+   <addaction name="actionAddFrame"/>
+   <addaction name="actionRemoveFrame"/>
+   <addaction name="actionAddExposure"/>
+   <addaction name="actionDecreaseExposure"/>
+   <addaction name="actionMoveLayerUp"/>
+   <addaction name="actionMoveDownLayer"/>
+   <addaction name="actionPrevFrame"/>
+   <addaction name="actionNextFrame"/>
+   <addaction name="actionPrevLayer"/>
+   <addaction name="actionNextLayer"/>
+   <addaction name="actionPrevImage"/>
+   <addaction name="actionNextImage"/>
+   <addaction name="actionAddRasterLayer"/>
+   <addaction name="actionAddTraceLayer"/>
+   <addaction name="actionImportSound"/>
+   <addaction name="actionRemoveLayer"/>
+   <addaction name="actionToggleUI"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QDockWidget" name="timelineContainter">
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="Timeline" name="timeline" native="true"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionPen">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/pen.png</normaloff>:/icons/pen.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pen</string>
+   </property>
+   <property name="toolTip">
+    <string>Pen tool for line drawing</string>
+   </property>
+   <property name="shortcut">
+    <string>1</string>
+   </property>
+  </action>
+  <action name="actionEraser">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/eraser.png</normaloff>:/icons/eraser.png</iconset>
+   </property>
+   <property name="text">
+    <string>Eraser</string>
+   </property>
+   <property name="toolTip">
+    <string>Eraser</string>
+   </property>
+   <property name="shortcut">
+    <string>2</string>
+   </property>
+  </action>
+  <action name="actionIncreaseBrushSize">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/increase_brush.png</normaloff>:/icons/increase_brush.png</iconset>
+   </property>
+   <property name="text">
+    <string>Increase Brush Size</string>
+   </property>
+   <property name="toolTip">
+    <string>Increase Brush Size</string>
+   </property>
+  </action>
+  <action name="actionDecreaseBrushSize">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/decrese_brush.png</normaloff>:/icons/decrese_brush.png</iconset>
+   </property>
+   <property name="text">
+    <string>Decrease Brush Size</string>
+   </property>
+   <property name="toolTip">
+    <string>Decrease Brush Size</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/save.png</normaloff>:/icons/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="toolTip">
+    <string>Save file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionImportSound">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/import_wave.png</normaloff>:/icons/import_wave.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import Sound</string>
+   </property>
+   <property name="toolTip">
+    <string>Import Sound</string>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/clear.png</normaloff>:/icons/clear.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear</string>
+   </property>
+   <property name="toolTip">
+    <string>Clear current frame</string>
+   </property>
+   <property name="shortcut">
+    <string>`</string>
+   </property>
+  </action>
+  <action name="actionPan">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/pan.png</normaloff>:/icons/pan.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pan</string>
+   </property>
+   <property name="toolTip">
+    <string>Panning on canvas</string>
+   </property>
+  </action>
+  <action name="actionRotate">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/rotate.png</normaloff>:/icons/rotate.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rotate</string>
+   </property>
+   <property name="toolTip">
+    <string>Rotate canvas</string>
+   </property>
+  </action>
+  <action name="actionZoom">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/zoom.png</normaloff>:/icons/zoom.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom canvas</string>
+   </property>
+  </action>
+  <action name="actionAddFrame">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/add_frame.png</normaloff>:/icons/add_frame.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Frame</string>
+   </property>
+   <property name="toolTip">
+    <string>Add Frame</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionRemoveFrame">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/remove_frame.png</normaloff>:/icons/remove_frame.png</iconset>
+   </property>
+   <property name="text">
+    <string>Remove Frame</string>
+   </property>
+   <property name="toolTip">
+    <string>Remove Frame</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionAddExposure">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/add_exposure.png</normaloff>:/icons/add_exposure.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Exposure</string>
+   </property>
+   <property name="toolTip">
+    <string>Add Exposure</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionDecreaseExposure">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/decrease_exposure.png</normaloff>:/icons/decrease_exposure.png</iconset>
+   </property>
+   <property name="text">
+    <string>Decrease Exposure</string>
+   </property>
+   <property name="toolTip">
+    <string>Decrease Exposure</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionNextFrame">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/next_frame.png</normaloff>:/icons/next_frame.png</iconset>
+   </property>
+   <property name="text">
+    <string>Next Frame</string>
+   </property>
+   <property name="toolTip">
+    <string>Go to next frame</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+G</string>
+   </property>
+  </action>
+  <action name="actionPrevFrame">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/prev_frame.png</normaloff>:/icons/prev_frame.png</iconset>
+   </property>
+   <property name="text">
+    <string>Prev Frame</string>
+   </property>
+   <property name="toolTip">
+    <string>Go to previous frame</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+F</string>
+   </property>
+  </action>
+  <action name="actionNextLayer">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/next_layer.png</normaloff>:/icons/next_layer.png</iconset>
+   </property>
+   <property name="text">
+    <string>Next Layer</string>
+   </property>
+   <property name="toolTip">
+    <string>Go To Next Layer</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+G</string>
+   </property>
+  </action>
+  <action name="actionPrevLayer">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/prev_layer.png</normaloff>:/icons/prev_layer.png</iconset>
+   </property>
+   <property name="text">
+    <string>Prev Layer</string>
+   </property>
+   <property name="toolTip">
+    <string>Go To Prev Layer</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+F</string>
+   </property>
+  </action>
+  <action name="actionNextImage">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/next_image.png</normaloff>:/icons/next_image.png</iconset>
+   </property>
+   <property name="text">
+    <string>Next Image</string>
+   </property>
+   <property name="toolTip">
+    <string>Go To Next Image</string>
+   </property>
+   <property name="shortcut">
+    <string>G</string>
+   </property>
+  </action>
+  <action name="actionPrevImage">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/prev_image.png</normaloff>:/icons/prev_image.png</iconset>
+   </property>
+   <property name="text">
+    <string>Prev Image</string>
+   </property>
+   <property name="toolTip">
+    <string>Go To Previous Image</string>
+   </property>
+   <property name="shortcut">
+    <string>F</string>
+   </property>
+  </action>
+  <action name="actionShowOnion">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/onion.png</normaloff>:/icons/onion.png</iconset>
+   </property>
+   <property name="text">
+    <string>ShowOnion</string>
+   </property>
+   <property name="toolTip">
+    <string>Show Onion Skin</string>
+   </property>
+   <property name="shortcut">
+    <string>S</string>
+   </property>
+  </action>
+  <action name="actionPlay">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/play.png</normaloff>:/icons/play.png</iconset>
+   </property>
+   <property name="text">
+    <string>Play</string>
+   </property>
+   <property name="toolTip">
+    <string>Play/Pause</string>
+   </property>
+   <property name="shortcut">
+    <string>A</string>
+   </property>
+  </action>
+  <action name="actionAddRasterLayer">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/add_raster_layer.png</normaloff>:/icons/add_raster_layer.png</iconset>
+   </property>
+   <property name="text">
+    <string>AddRasterLayer</string>
+   </property>
+   <property name="toolTip">
+    <string>Add Raster Layer</string>
+   </property>
+  </action>
+  <action name="actionRemoveLayer">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/remove_layer.png</normaloff>:/icons/remove_layer.png</iconset>
+   </property>
+   <property name="text">
+    <string>RemoveLayer</string>
+   </property>
+   <property name="toolTip">
+    <string>Remove Current Layer</string>
+   </property>
+  </action>
+  <action name="actionToggleUI">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/hide_ui.png</normaloff>:/icons/hide_ui.png</iconset>
+   </property>
+   <property name="text">
+    <string>ToggleUI</string>
+   </property>
+   <property name="toolTip">
+    <string>Show/Hide All UI</string>
+   </property>
+   <property name="shortcut">
+    <string>F4</string>
+   </property>
+  </action>
+  <action name="actionIdentity">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/identity.png</normaloff>:/icons/identity.png</iconset>
+   </property>
+   <property name="text">
+    <string>Identity</string>
+   </property>
+   <property name="toolTip">
+    <string>Reset all transforms</string>
+   </property>
+   <property name="shortcut">
+    <string>T</string>
+   </property>
+  </action>
+  <action name="actionFill">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/fill.png</normaloff>:/icons/fill.png</iconset>
+   </property>
+   <property name="text">
+    <string>Fill</string>
+   </property>
+   <property name="toolTip">
+    <string>Fill</string>
+   </property>
+   <property name="shortcut">
+    <string>Q</string>
+   </property>
+  </action>
+  <action name="actionRegion">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/region.png</normaloff>:/icons/region.png</iconset>
+   </property>
+   <property name="text">
+    <string>Region</string>
+   </property>
+   <property name="toolTip">
+    <string>Fill Region</string>
+   </property>
+   <property name="shortcut">
+    <string>R</string>
+   </property>
+  </action>
+  <action name="actionSelectColor">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/color_picker.png</normaloff>:/icons/color_picker.png</iconset>
+   </property>
+   <property name="text">
+    <string>SelectColor</string>
+   </property>
+   <property name="toolTip">
+    <string>Pick color on canvas</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/open.png</normaloff>:/icons/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="toolTip">
+    <string>Open a project</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/new_project.png</normaloff>:/icons/new_project.png</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+   <property name="toolTip">
+    <string>New Project</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionExportFrames">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/export_frames.png</normaloff>:/icons/export_frames.png</iconset>
+   </property>
+   <property name="text">
+    <string>ExportFrames</string>
+   </property>
+   <property name="toolTip">
+    <string>Export Frames</string>
+   </property>
+  </action>
+  <action name="actionSpline">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/spline.png</normaloff>:/icons/spline.png</iconset>
+   </property>
+   <property name="text">
+    <string>Spline</string>
+   </property>
+   <property name="toolTip">
+    <string>4 points spline</string>
+   </property>
+   <property name="shortcut">
+    <string>B</string>
+   </property>
+  </action>
+  <action name="actionMoveLayerUp">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/move_up_layer.png</normaloff>:/icons/move_up_layer.png</iconset>
+   </property>
+   <property name="text">
+    <string>MoveLayerUp</string>
+   </property>
+   <property name="toolTip">
+    <string>Move Up Current Layer</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Up</string>
+   </property>
+  </action>
+  <action name="actionMoveDownLayer">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/move_down_layer.png</normaloff>:/icons/move_down_layer.png</iconset>
+   </property>
+   <property name="text">
+    <string>MoveDownLayer</string>
+   </property>
+   <property name="toolTip">
+    <string>Move Down Current Layer</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Down</string>
+   </property>
+  </action>
+  <action name="actionAddTraceLayer">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/add_trace_layer.png</normaloff>:/icons/add_trace_layer.png</iconset>
+   </property>
+   <property name="text">
+    <string>AddTraceLayer</string>
+   </property>
+   <property name="toolTip">
+    <string>Add Trace Layer</string>
+   </property>
+  </action>
+  <action name="actionTraceTool">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/trace.png</normaloff>:/icons/trace.png</iconset>
+   </property>
+   <property name="text">
+    <string>TraceTool</string>
+   </property>
+   <property name="toolTip">
+    <string>Trace Tool</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>RasterImageEditor</class>
+   <extends>QWidget</extends>
+   <header>rasterimageeditor.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Timeline</class>
+   <extends>QWidget</extends>
+   <header location="global">timeline.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/clear.png</file>
+        <file>icons/decrese_brush.png</file>
+        <file>icons/eraser.png</file>
+        <file>icons/import_wave.png</file>
+        <file>icons/increase_brush.png</file>
+        <file>icons/open.png</file>
+        <file>icons/pen.png</file>
+        <file>icons/redo.png</file>
+        <file>icons/save.png</file>
+        <file>icons/undo.png</file>
+        <file>icons/pan.png</file>
+        <file>icons/rotate.png</file>
+        <file>icons/zoom.png</file>
+        <file>icons/onion.png</file>
+        <file>icons/next_frame.png</file>
+        <file>icons/next_image.png</file>
+        <file>icons/next_layer.png</file>
+        <file>icons/play.png</file>
+        <file>icons/prev_frame.png</file>
+        <file>icons/prev_image.png</file>
+        <file>icons/prev_layer.png</file>
+        <file>icons/add_exposure.png</file>
+        <file>icons/add_frame.png</file>
+        <file>icons/decrease_exposure.png</file>
+        <file>icons/remove_frame.png</file>
+        <file>icons/add_raster_layer.png</file>
+        <file>icons/remove_layer.png</file>
+        <file>icons/visible.png</file>
+        <file>icons/fill.png</file>
+        <file>icons/hide_ui.png</file>
+        <file>icons/identity.png</file>
+        <file>icons/color_picker.png</file>
+        <file>icons/export_frames.png</file>
+        <file>icons/move_down_layer.png</file>
+        <file>icons/move_up_layer.png</file>
+        <file>icons/region.png</file>
+        <file>icons/spline.png</file>
+        <file>icons/new_project.png</file>
+        <file>icons/add_trace_layer.png</file>
+        <file>icons/trace.png</file>
+    </qresource>
+</RCC>
